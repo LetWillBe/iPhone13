@@ -36,8 +36,11 @@ const tabsFunc = () => {
         tabsImage.setAttribute('src', tabsOptions[index].image);
 
         //Домашнее Задание №2
-        const tabBrowser = document.querySelector('title');
-        tabBrowser.textContent = tabsOptions[index].name;
+        //v1
+        //const tabBrowser = document.querySelector('title');
+        //tabBrowser.textContent = tabsOptions[index].name;
+        //v2
+        document.title = tabsOptions[index].name;
     };
 
     //функция на смену активного таба
