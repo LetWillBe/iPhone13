@@ -34,6 +34,10 @@ const tabsFunc = () => {
         tabsTitle.textContent = `Смартфон Apple iPhone 13 Pro ${tabsOptions[index].memory}GB ${tabsOptions[index].name}`;
         tabsPrice.textContent = `${tabsOptions[index].price}₽`;
         tabsImage.setAttribute('src', tabsOptions[index].image);
+
+        //Домашнее Задание №2
+        const tabBrowser = document.querySelector('title');
+        tabBrowser.textContent = tabsOptions[index].name;
     };
 
     //функция на смену активного таба
@@ -61,6 +65,8 @@ const tabsFunc = () => {
 
     //По умолчанию в табах выводится информация о первой модели, вместо той что в верстке
     changeContent(0);
+
+
 };
 
 tabsFunc();
