@@ -1,4 +1,16 @@
 const accordeon = () => {
+    //Функция на авто-закрытие открытых разделов
+    const closeContent = () => {
+        const activeButton = document.querySelector('.characteristics__title.active');
+        const openContent = document.querySelector('.characteristics__description.open');
+        if (activeButton) {
+            activeButton.classList.remove('active');
+        }
+        if (openContent) {
+            openContent.classList.remove('open');
+            openContent.style.height = '';
+        }
+    };
     //получаем со страницы элементы списка
     const charItem = document.querySelectorAll('.characteristics__item');
     charItem.forEach((item) => {
@@ -14,6 +26,7 @@ const accordeon = () => {
             } else {
                 //открытие блока
                 //charContent.classList.add('open');
+                closeContent(); //Закрываем открытые разделы
                 //по свойству charContent.scrollHeight определяем размер выпадающего меню
                 //и задаём его значение как высоту блока
                 charContent.style.height = charContent.scrollHeight + 'px';
