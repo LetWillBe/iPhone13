@@ -6,19 +6,6 @@ const accordeon = () => {
         const charContent = item.querySelector('.characteristics__description');
         //обработчик события на клик по разделу меню
         charButton.addEventListener('click', () => {
-            //Авто-закрытие открытых табов
-            const closeContent = () => {
-                const activeButton = document.querySelector('.characteristics__title.active');
-                const openContent = document.querySelector('.characteristics__description.open');
-                if (activeButton) {
-                    activeButton.classList.remove('active');
-                }
-                if (openContent) {
-                    openContent.classList.remove('open');
-                    openContent.style.height = '';
-                }
-            };
-            closeContent();
             //проверка открыт или закрыт блок при клике
             if (charContent.classList.contains('open')) {
                 //закрытие блока
