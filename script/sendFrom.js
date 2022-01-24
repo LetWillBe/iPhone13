@@ -19,6 +19,13 @@ const sendFrom = () => {
     });
     //обработчик события на кнопку отправки формы
     modalForm.addEventListener('submit', (event) => {
+        const spanClear = () => {
+            labels.forEach((label) => {
+                const span = label.querySelector("span");
+
+                span.textContent = "";
+            });
+        };
         //очищаем действие по умолчанию
         event.preventDefault();
         //находим три поля формы
@@ -42,13 +49,10 @@ const sendFrom = () => {
             })
             .then(() => {
                 console.log('Отправлено!');
+                //Очистка формы и закрытие окна
+                event.target.reset();
+                modal.style.display = 'none';
             });
-
-        //Очистка формы и закрытие окна
-        document.addEventListener('submit', (event) => {
-            event.target.reset();
-            modal.style.display = 'none';
-        });
     });
 };
 sendFrom();
