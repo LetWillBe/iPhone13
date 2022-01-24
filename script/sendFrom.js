@@ -31,8 +31,6 @@ const sendFrom = () => {
             const span = label.querySelector('span');
             const input = label.querySelector('input');
             sendMesage[span.textContent] = input.value;
-            console.log(span.textContent);
-            console.log(input.value);
         });
         //POST-запрос
         fetch('https://jsonplaceholder.typicode.com/posts', {
